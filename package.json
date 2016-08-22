@@ -7,7 +7,15 @@
     "url": "https://github.com/mohayonao/run-with-mocha/issues"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-register": "^6.11.6",
+    "eater": "^3.0.0-5",
+    "eslint": "^3.3.1",
+    "mocha": "^3.0.2",
+    "npm-run-all": "^3.0.0",
+    "power-assert": "^1.4.1"
+  },
   "engines": {
     "node": ">= 4.0.0"
   },
@@ -27,5 +35,16 @@
     "type": "git",
     "url": "https://github.com/mohayonao/run-with-mocha.git"
   },
-  "scripts": {}
+  "scripts": {
+    "clean": "rm -rf npm-debug.log",
+    "lint": "eslint index.js test",
+    "mocha": "mocha",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm-run-all clean lint test",
+    "preversion": "npm-run-all clean lint test",
+    "test": "npm-run-all test:*",
+    "test:eater": "eater",
+    "test:node": "node test/success.js",
+    "travis": "npm-run-all lint test"
+  }
 }
