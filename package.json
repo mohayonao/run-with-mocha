@@ -1,7 +1,7 @@
 {
   "name": "run-with-mocha",
   "description": "run with mocha",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Nao Yonamine <mohayonao@gmail.com>",
   "bugs": {
     "url": "https://github.com/mohayonao/run-with-mocha/issues"
