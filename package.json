@@ -1,0 +1,31 @@
+{
+  "name": "run-with-mocha",
+  "description": "run with mocha",
+  "version": "0.0.0",
+  "author": "Nao Yonamine <mohayonao@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/mohayonao/run-with-mocha/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "index.js"
+  ],
+  "homepage": "https://github.com/mohayonao/run-with-mocha/",
+  "keywords": [
+    "mocha",
+    "runner"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohayonao/run-with-mocha.git"
+  },
+  "scripts": {}
+}
