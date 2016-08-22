@@ -11,6 +11,23 @@
 npm install --save mocha run-with-mocha
 ```
 
+## Usage
+
+If run a script without `mocha` command, `run-with-mocha` re-executes the script with `mocha` command.
+So, you can run tests directly without `mocha` command, for example using by [atom-runner](https://atom.io/packages/atom-runner).
+
+```js
+require("run-with-mocha");
+
+const assert = require("assert");
+
+describe("test", () => {
+  it("ok", () => {
+    assert(true);
+  });
+});
+```
+
 ## License
 
 MIT
