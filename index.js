@@ -8,6 +8,7 @@ function runWithMocha() {
   }
   MOCHA_GLOBAL_API.forEach((key) => {
     global[key] = () => {};
+    global[key].skip = global[key].only = () => {};
   });
 
   const cp = require("child_process");
