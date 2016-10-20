@@ -1,8 +1,23 @@
 "use strict";
 
+const path = require("path");
+
 const MOCHA_GLOBAL_API = [ "context", "describe", "it", "before", "after", "beforeEach", "afterEach" ];
 
 const ENV = {};
+
+function findMocha() {
+  try {
+    const mochaPath = require.resolve("mocha");
+    const pathItems = mochaPath.split(path.sep);
+
+    pathItems.splice(-2, 2, ".bin", "mocha");
+
+    return pathItems.join(path.sep);
+  } catch (e) {
+    return "mocha";
+  }
+}
 
 function runWithMocha() {
   if (MOCHA_GLOBAL_API.every(key => typeof global[key] === "function")) {
@@ -15,8 +30,8 @@ function runWithMocha() {
 
   process.nextTick(() => {
     const cp = require("child_process");
-    const bin = cp.execSync("npm bin", { encoding: "utf-8" }).trim();
-    const proc = cp.exec(`${ bin }/mocha ${ process.argv[1] }`, {
+    const cmd = findMocha();
+    const proc = cp.exec(`${ cmd } ${ process.argv[1] }`, {
       env: Object.assign({}, process.env, { NODE_ENV: "development" }, ENV)
     });
 
