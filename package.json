@@ -9,11 +9,11 @@
   "dependencies": {},
   "devDependencies": {
     "babel-preset-power-assert": "^1.0.0",
-    "babel-register": "^6.11.6",
-    "eater": "^3.0.0-5",
-    "eslint": "^3.3.1",
-    "mocha": "^3.0.2",
-    "npm-run-all": "^3.0.0",
+    "babel-register": "^6.16.3",
+    "eater": "^3.1.0",
+    "eslint": "^3.8.1",
+    "mocha": "^3.1.2",
+    "npm-run-all": "^3.1.1",
     "power-assert": "^1.4.1"
   },
   "engines": {
